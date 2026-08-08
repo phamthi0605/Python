@@ -31,3 +31,8 @@ print(sum_even)
 
 # Ex4: Nhập 1 số integer và kiểm tra xem số number có nằm trong rang [22-65]
 a = int(input("Nhập a: "))
+if 22 <= a <= 65:
+    print("Có")
+else:
+    print("Không")
+
