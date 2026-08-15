@@ -109,3 +109,142 @@ print(dict_del)
 # del dict_del
 # print(dict_del) 
 # Result: NameError: name 'dict_user' is not defined
+
+# values: trả về list tất cả các giá trị của dict
+dict_values = {
+    "name": "Hang beo",
+    "status": "single",
+    "address": "HN"
+}
+print(dict_values.values());
+# dict_values(['Hang beo', 'single', 'HN'])
+
+#  keys(): trả về list tất cả các khóa của dict
+dict_key = {
+    "name": "Hang beo",
+    "status": "single",
+    "address": "HN",
+    "company": "abc"
+}
+print(dict_key.keys()); 
+# dict_keys(['name', 'status', 'address', 'company'])
+
+# items(): trả về list tất cả các cặp khóa
+
+dict_items ={
+    "name": "Thi",
+    "abc" : "Hi",
+    "pos" : "12"
+}
+print(dict_items.items()); 
+# dict_items([('name', 'Thi'), ('abc', 'Hi'), ('pos', '12')])
+
+# copy: tạo một bản sao của dict
+dict_copy = {
+    "name" : "Hang",
+    "status" : "single",
+    "company" : "abc",
+    "add" : "HN",
+    "sport" : "no"
+}
+new_dict = dict_copy.copy()
+print("dict copy: ", new_dict)
+#  {'name': 'Hang', 'status': 'single', 'company': 'abc', 'add': 'HN', 'sport': 'no'}
+
+# setdefault(key, default= None): trả về 1 list của tất cả các giá trị trong dict
+dict_samp = {
+    "name" : "Hang béo",
+    "gender" : "female"
+}
+dict_samp.setdefault("age")
+print(dict_samp)
+# {'name': 'Hang béo', 'gender': 'female', 'age': None}
+#  Hoặc có thể truyền dict_samp.setdefault("age", 20)
+
+# fromKeys(seq, value): trả về 1 dict với các key là các phần tử trong seq và giá trị là value
+values = "one"
+dict_check = {
+    "name" : "Hang beo",
+    "Hobby": "Eat",
+    "gender" : "female"
+}
+new_dict = dict.fromkeys(dict_check, values)
+print(new_dict)
+# {'name': 'one', 'Hobby': 'one', 'gender': 'one'}
+
+# Use in or not in to check elements is or not exist in dict:
+dict_1 ={
+    "name" : "Pham Hang", 
+    "Hobby" : "Sleep",
+    "gender" : "female"
+}
+if "name" in dict_1:
+    print("Keys is exist in dict")
+else:
+    print("Not exist in dict")
+# Keys is exist in dict
+
+if "address" not in dict_1:
+    print("True")
+else:
+    print("False")
+# True
+
+
+# Exercise 1:
+#  Viết 1 chương trình để tìm books:
+# Title, Author, Publisher
+myBooks = [
+    {
+        "Title": "Doraemon",
+        "Author": "Fujiko F. Fujio",
+        "Publisher": "Shogakukan"
+    },
+    {
+        "Title": "Harry Potter",
+        "Author": "J.K. Rowling",
+        "Publisher": "Bloomsbury"
+    },
+    {
+        "Title": "Conan",
+        "Author": "Gosho Aoyama",
+        "Publisher": "Shogakukan"
+    }
+]
+for book in myBooks:
+    print("Title: ", book["Title"])
+    print("Author:", book["Author"])
+    print("Publisher:", book["Publisher"])
+    print()
+# Title:  Doraemon
+# Author: Fujiko F. Fujio
+# Publisher: Shogakukan
+
+# Title:  Harry Potter
+# Author: J.K. Rowling
+# Publisher: Bloomsbury
+
+# Title:  Conan
+# Author: Gosho Aoyama
+# Publisher: Shogakukan
+
+# Exercise 2:
+# Viết 1 chương trình để tìm user có số điện thoại kết thúc là 1 hoặc email trống
+userdata  = [
+    {
+        "name" : "Jack",
+        "age" : "12",
+        "phone": "555-1316",
+        "email": "jack12@gmail.com"
+    },
+    {
+        "name": "Thi",
+        "age": "14",
+        "phone": "555-1112",
+        "email": ""
+    }
+]
+for user in userdata:
+    if user["phone"].endswith("1") or user["email"] == "":
+        print(user)
+# {'name': 'Thi', 'age': '14', 'phone': '555-1112', 'email': ''}
